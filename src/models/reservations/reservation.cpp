@@ -9,6 +9,9 @@ Reservation::Reservation(std::string const& from, std::string const& to)
 bool Reservation::isEmpty() const
 {
     // TODO
+    if (from.empty() && to.empty()){
+        return true;
+    }
 
     return false;
 }
@@ -16,6 +19,9 @@ bool Reservation::isEmpty() const
 std::string Reservation::getDisplayText() const
 {
     // TODO
+   
+    return from + " - " + to;
 
-    return "";
+
+    
 }
