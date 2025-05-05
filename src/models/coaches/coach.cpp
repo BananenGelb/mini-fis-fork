@@ -35,27 +35,35 @@ void Coach::updateSeatDisplay(std::string const& seatId, std::string const& newT
        //}
     //}
 
-    //for(auto& [id,display]:seat_displays){
-      //  if(id==seatId){
-        //    display.updateText(newText);
-        //}
-    //}
+    for(auto& [id,display]:seat_displays){
+       if(id==seatId){
+            display.updateText(newText);
+        }
+    }
 
-    seat_displays[seatId].updateText(newText);
+    //seat_displays[seatId].updateText(newText);
 }
 
 void Coach::showCeilingDisplays() const
 {
     // TODO
+    for (int i=0; i<ceiling_displays.size();i++){
+        ceiling_displays[i].show();
+    }
     
 }
 
 void Coach::showSeatDisplays() const
 {
     // TODO
+    for (const auto& [seatId, display] : seat_displays) {
+        display.show();
+    }
 }
 
 void Coach::showAllDisplays() const
 {
     // TODO
+    showCeilingDisplays();
+    showSeatDisplays();
 }
